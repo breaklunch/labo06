@@ -1,0 +1,82 @@
+extends layout
+block content
+  body
+    include mixins
+    +nav("Pruebas con pug", "drop_down" , "dark")
+      +nav_item("index.html", "active") Home
+      +nav_item("about.html") About
+      +nav_item("contact.html") Contact
+      +nav_item_dropdown('#')
+          +nav_item("#","active") Item 1
+          +nav_item("#") Item 2
+          +nav_item("#") Item 3
+          +nav_divider
+          +nav_header Nav Header
+          +nav_item("#") Item 4
+          +nav_item("#") Item 5
+    main.container(role="main" style="padding: 60px;")
+        h1.text-center Bootstrap starter template
+          +alert("warning") Warning!
+          +alert("danger") Danger Willuy!
+          +alert("success") Logrado!
+          +alert("info") Data de piola!
+        p.lead.text-center This document as a way to quickly start a new Bootstrap 4 project.
+        p.text-center Build upon this barebones HTML document.
+        .row
+          - lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+          .col-md-4
+            +panel("Panel heading")= lorem
+          .col-md-4
+            +panel("Panel heading", "success")= lorem
+          .col-md-4
+            +panel("Panel heading", "danger")= lorem
+        +button Default
+        +button("primary", "link.html") Primary
+        +button("success", "success.html", "large") Success
+        +button("info", "info.html", "small") Info
+        +button("warning", "warning.html", "mini") Warning 
+            
+    <a href="#" class="btn btn-default">Default</a>
+    <a href="link.html" class="btn btn-primary">Primary</a>
+    <a href="#" class="btn btn-success">Succes</a>
+    <a href="#" class="btn btn-info">Info</a>
+    <a href="#" class="btn btn-warning">Warning</a>
+    <a href="#" class="btn btn-danger">Danger</a>
+      br
+
+      .jumbotron
+        h1 Hello,world
+        p This is safe
+        p: +button("primary", "#", "large") Learn more
+        +listGroup("list")
+          +listItem("active") "Nose que pero odio"
+          +listItem "jateo lorem"
+          +listItem "item odio"
+          +listItem "momento de codigo"
+          +listItem "odio"
+        br
+        +listGroup("links")
+          +listItem("link1.html", "active")
+            +listHeading List group item heading
+            +listText dulce lorem dulce libertad
+          +listItem("link2.html")
+            +listHeading List group item heading
+            +listText dulce lorem dulce libertad
+          +listItem("link3.html")
+            +listHeading List group item heading
+            +listText dulce lorem dulce libertad
+        br
+        +listGroup
+          +listItem
+            +listHeading List group item heading
+            +listText dulce lorem dulce libertad
+          +listItem
+            +listHeading List group item heading
+            +listText dulce lorem dulce libertad
+          +listItem
+            +listHeading List group item heading
+            +listText dulce lorem dulce libertad
+
+    script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous")
